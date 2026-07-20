@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HIT.GG — Log In</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="auth-screen">
+  <div class="auth-card">
+    <div class="auth-brand">
+      <div class="mark"><span>H</span></div>
+      <h1 class="display" style="font-size:22px; margin:0;">HIT<em style="color:var(--gold);">.GG</em></h1>
+    </div>
+
+    <div class="auth-tabs">
+      <button id="tab-login" class="active" onclick="setAuthMode('login')">Log in</button>
+      <button id="tab-signup" onclick="setAuthMode('signup')">Sign up</button>
+    </div>
+
+    <form onsubmit="submitAuth(event)">
+      <div class="field" id="field-username" style="display:none;">
+        <label>Username</label>
+        <input type="text" id="auth-username" placeholder="plumraider">
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input type="email" id="auth-email" placeholder="you@example.com" required>
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" id="auth-pass" placeholder="••••••••" required>
+      </div>
+      <button type="submit" class="btn btn-gold auth-submit" id="auth-submit-btn">
+        <span id="auth-submit-label">Log in</span>
+      </button>
+    </form>
+
+    <div class="auth-divider">or</div>
+    <span class="guest-link" onclick="continueAsGuest()">Continue as guest</span>
+
+    <p class="auth-note">
+      This is a front-end demo — no accounts are created and no passwords are checked or stored.
+      Wire real authentication (your backend + session, or an identity provider) before this goes near real users.
+      Must be 18+ (21+ where required).
+    </p>
+  </div>
+</div>
+
+<script src="js/auth.js"></script>
+</body>
+</html>
